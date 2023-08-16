@@ -35,13 +35,21 @@ namespace exemplo {
             console.log(valor);
         } 
 
-    const carro = {
+        interface Carro {
+            marca: string;
+            ano: string;
+            cor: string;
+        }
+
+    let carro: Carro = {
         marca: "Gol",
-        ano: 1998,
+        ano: "1998",
         cor:"Roxo"
     }
+    console.log(carro);
+    
     for(let props in carro) {
-        console.log(`${props}: ${carro[props]}`);
+        console.log(`${props}: ${carro[props as keyof Carro]}`);
         
     }
 
